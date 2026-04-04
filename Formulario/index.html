@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NeuroFit | Registro de Paciente</title>
+    <title>Registro de Paciente</title>
     <link rel="stylesheet" href="style.css">
     
 </head>
@@ -43,12 +43,19 @@
             <label for="Intereses">Cuales son tus intereses</label>
 
             <div class="grid-checkbox">
-                <input type="checkbox" name="Informatica" id="informatica">
-                <label for="informatica">Informática</label>
-                <input type="checkbox" name="Deportes" id="deportes">
-                <label for="deportes">Deportes</label>
-                <input type="checkbox" name="Musica" id="musica">
-                <label for="musica">Música</label>
+                <div class="grid_form">
+                    <input type="checkbox" name="Informatica" id="informatica">
+                    <label for="informatica">Informática</label>
+                </div>
+                <div class="grid_form">
+                    <input type="checkbox" name="Deportes" id="deportes">
+                    <label for="deportes">Deportes</label>
+                </div>
+                <div class="grid_form">
+                    <input type="checkbox" name="Musica" id="musica">
+                    <label for="musica">Música</label>
+                </div>
+            
                 <label for="otros">Otros</label>
                 <input type="text" name="otros" id="otros" placeholder="Especifica otros intereses">
             </div>
@@ -60,7 +67,9 @@
             <input type="submit" value="Registrar Paciente" class="btn-primary" name="Registrar">
             
             <p class="footer-text">Al registrar, aceptas los términos de uso</p>
+            <p class="result"></p>
         </form>
     </div>
+    <script src="code.js"></script>
 </body>
 </html>
