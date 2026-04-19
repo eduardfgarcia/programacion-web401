@@ -1,0 +1,204 @@
+:root {
+    --bg-dark: #050505;
+    --accent-blue: #007AFF;
+    --accent-darkblue: #004080;
+    --glass: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --text-main: #ffffff;
+    --text-dim: #a0a0a0;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+
+body { background-color: var(--bg-dark); color: var(--text-main); overflow-x: hidden; }
+
+/* --- Animaciones --- */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes flotar {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+.reveal { animation: fadeIn 0.8s ease forwards; }
+
+/* --- Navegación --- */
+nav {
+    position: fixed; top: 0; width: 100%; padding: 20px 5%;
+    display: flex; justify-content: space-between; align-items: center;
+    background: rgba(5, 5, 5, 0.85); backdrop-filter: blur(15px);
+    z-index: 1000; border-bottom: 1px solid var(--glass-border);
+}
+
+.logo { font-weight: 800; font-size: 1.5rem; letter-spacing: -1px; }
+.logo span { color: var(--accent-blue); }
+#barra { color: var(--accent-darkblue); margin: 0 8px; }
+
+.nav-links a { color: var(--text-dim); text-decoration: none; margin-left: 30px; font-size: 0.85rem; text-transform: uppercase; transition: 0.3s; }
+.nav-links a:hover { color: var(--accent-blue); }
+
+/* --- Hero --- */
+header { height: 100vh; position: relative; display: flex; align-items: center; padding: 0 10%; overflow: hidden; }
+#video-fondo { position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; transform: translate(-50%, -50%); object-fit: cover; opacity: 0.4; z-index: -1; }
+.overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(90deg, rgba(5,5,5,0.9) 0%, transparent 100%); z-index: 0; }
+
+.header-content { position: relative; z-index: 1; max-width: 800px; }
+h1 { font-size: 3.5rem; font-weight: 800; background: linear-gradient(to bottom, #fff, var(--accent-blue)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; animation: flotar 4s ease-in-out infinite; margin-bottom: 20px; }
+.hero-sub { color: var(--text-dim); font-size: 1.2rem; margin-bottom: 40px; }
+
+.btn-primary {
+    padding: 16px 40px; background: var(--accent-blue); color: white; text-decoration: none;
+    border-radius: 50px; font-weight: 600; box-shadow: 0 10px 30px rgba(0, 122, 255, 0.3); transition: 0.3s;
+}
+.btn-primary:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0, 122, 255, 0.5); }
+
+/* --- Bento & Tables --- */
+.section-container { padding: 100px 10%; }
+h2 { text-align: center; font-size: 2.5rem; margin-bottom: 50px; }
+
+
+/* Contenedor principal para alinear texto y póster */
+.engineering-layout {
+    display: flex;
+    gap: 40px; /* Espacio entre el texto y la imagen */
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Ajuste del texto */
+.engineering-text {
+    flex: 1.5; /* El texto es un poco más ancho que la imagen */
+    line-height: 1.8;
+    text-align: justify;
+    color: var(--text-dim);
+}
+
+.engineering-text strong {
+    color: var(--accent-blue);
+}
+
+/* Ajuste del póster */
+.engineering-poster {
+    flex: 1;
+    position: sticky; /* Se queda quieto mientras haces scroll si el texto es largo */
+    top: 100px;
+}
+
+.poster-wrapper {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden; /* Corta el zoom para que no se salga del contenedor */
+    border: 1px solid var(--glass-border);
+    background: var(--glass);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    cursor: zoom-in;
+}
+
+#nosotros .about-us-content {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-container-about p {
+    color: var(--text-dim);
+    line-height: 1.8;
+    text-align: justify;
+}
+
+.section-container-about strong {
+    color: var(--accent-blue);
+}
+
+
+.zoom-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Efecto Zoom al pasar el mouse */
+.poster-wrapper:hover .zoom-img {
+    transform: scale(2.2); /* Nivel de zoom */
+}
+
+.zoom-overlay {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 122, 255, 0.8);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.poster-wrapper:hover .zoom-overlay {
+    opacity: 0; /* Desaparece el texto de ayuda al hacer zoom */
+}
+
+/* Responsivo: Si la pantalla es pequeña (celular), se pone uno debajo del otro */
+@media (max-width: 900px) {
+    .engineering-layout {
+        flex-direction: column;
+    }
+    .engineering-poster {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
+/* 7. Responsivo (Móviles) */
+@media (max-width: 900px) {
+    .engineering-flex-container {
+        flex-direction: column; /* Apila el texto y el póster en pantallas pequeñas */
+        align-items: center;
+    }
+    
+    .poster-zoom-container:hover .zoomable-poster {
+        transform: scale(1.5); /* Menos zoom en móvil para evitar recortes */
+    }
+}
+
+#nosotros h2 {
+    margin-top: 60px;
+}
+
+.bento-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.bento-item { background: var(--glass); border: 1px solid var(--glass-border); padding: 30px; border-radius: 24px; transition: 0.3s; }
+.bento-item:hover { border-color: var(--accent-blue); background: rgba(255,255,255,0.08); }
+.large { grid-column: span 2; }
+
+.risk-table { width: 100%; border-collapse: collapse; background: var(--glass); border-radius: 20px; overflow: hidden; border: 1px solid var(--glass-border); }
+.risk-table th, .risk-table td { padding: 20px; text-align: left; border-bottom: 1px solid var(--glass-border); }
+.risk-table th { color: var(--accent-blue); text-transform: uppercase; font-size: 0.8rem; }
+
+.risk-badge { padding: 5px 12px; border-radius: 12px; font-size: 0.7rem; font-weight: 700; }
+.high { background: rgba(255, 69, 58, 0.2); color: #ff453a; }
+.medium { background: rgba(255, 159, 10, 0.2); color: #ff9f0a; }
+
+.features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+.feature-card { background: var(--glass); border: 1px solid var(--glass-border); padding: 25px; border-radius: 20px; text-align: center; }
+.highlight { border-color: var(--accent-blue); }
+
+.dev-container { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+
+footer { padding: 50px; border-top: 1px solid var(--glass-border); text-align: center; color: var(--text-dim); }
+.disclaimer { font-size: 0.7rem; margin-top: 15px; opacity: 0.5; }
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .bento-grid { grid-template-columns: 1fr; }
+    .large { grid-column: span 1; }
+    h1 { font-size: 2.2rem; }
+}
