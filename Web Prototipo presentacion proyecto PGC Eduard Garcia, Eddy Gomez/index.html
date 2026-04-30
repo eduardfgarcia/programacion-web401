@@ -4,7 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NeuroFit | HealthTech Diagnostic</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- Tu CSS personalizado (Siempre al final para que tenga prioridad) -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -27,40 +34,44 @@
         <div class="header-content">
             <h1>Software interactivo para la capacidad motora, reflejos y rapidez mental</h1>
             <p class="hero-sub">Ecosistema diseñado para medir la respuesta neuromuscular mediante visión artificial en tiempo real.</p>
-            <a href="#problema" class="btn-primary">Explorar Tecnología</a>
+            <a href="#problema" class="btn-primary" style="text-decoration: none;">Explorar Tecnología</a>
         </div>
     </header>
 
-    <section id="problema" class="section-container">
-    <h2>El Enfoque de Ingeniería</h2>
-    
-    <div class="engineering-layout">
-        
-        <div class="engineering-text">
-            <p>
-                <strong>NeuroFit</strong> nace como una respuesta técnica a la necesidad de modernizar los procesos de diagnóstico neuromuscular. El proyecto consiste en el desarrollo de un ecosistema digital integral que utiliza <strong>Visión Artificial</strong> para cuantificar variables motrices que, hasta hoy, se medían de forma subjetiva. La utilidad principal radica en proporcionar a los especialistas de salud una herramienta de precisión científica capaz de registrar la latencia de respuesta, la precisión cinética y la evolución histórica de un paciente, permitiendo detectar anomalías neurológicas en etapas tempranas.
-            </p>
-            <p>
-                Desde la perspectiva de arquitectura de software, hemos optado por un stack tecnológico robusto y escalable. El <strong>Backend</strong> está cimentado en <strong>Python</strong> utilizando el microframework <strong>Flask</strong>, lo que nos permite gestionar de manera eficiente la lógica de negocio, la seguridad multifactorial y la persistencia de datos en sistemas relacionales. En el <strong>Frontend</strong>, implementamos una interfaz de alta fidelidad con tecnologías web modernas, priorizando la experiencia de usuario (UX) para reducir la fatiga cognitiva. Además, el núcleo del procesamiento se apoya en bibliotecas como <strong>OpenCV y Mediapipe</strong>, que permiten el renderizado cinético de 33 puntos corporales en tiempo real.
-            </p>
+    <!-- ELEMENTO BOOTSTRAP 1: Alerta de Información -->
+    <div class="container mt-4">
+        <div class="alert alert-info alert-dismissible fade show border-0 shadow-sm" role="alert" style="border-radius: 15px;">
+            <strong><i class="bi bi-info-circle-fill"></i> Aviso de Proyecto:</strong> Esta plataforma es un prototipo académico desarrollado para la Universidad de Cundinamarca.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
+    </div>
 
-        <div class="engineering-poster">
-            <div class="poster-wrapper">
-                <img src="landingpageVideo\poster.png" alt="Póster NeuroFit" class="zoom-img">
-                <div class="zoom-overlay">Zoom disponible</div>
+    <section id="problema" class="section-container">
+        <h2>El Enfoque de Ingeniería</h2>
+        <div class="engineering-layout">
+            <div class="engineering-text">
+                <p>
+                    <strong>NeuroFit</strong> nace como una respuesta técnica a la necesidad de modernizar los procesos de diagnóstico neuromuscular. El proyecto consiste en el desarrollo de un ecosistema digital integral que utiliza <strong>Visión Artificial</strong> para cuantificar variables motrices.
+                </p>
+                <p>
+                    Desde la perspectiva de arquitectura de software, hemos optado por un stack tecnológico robusto: <strong>Python/Flask</strong> en el Backend y <strong>OpenCV/Mediapipe</strong> para el procesamiento cinético.
+                </p>
+            </div>
+            <div class="engineering-poster">
+                <div class="poster-wrapper">
+                    <img src="landingpageVideo/poster.png" alt="Póster NeuroFit" class="zoom-img">
+                    <div class="zoom-overlay">Zoom disponible</div>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section id="nosotros" class="section-container-about">
-    <h2>Sobre el Equipo de Desarrollo</h2>
-    <div class="about-us-content">
-        <p>
-            Detrás de NeuroFit se encuentra un equipo de estudiantes de <strong>Ingeniería de Software de la Universidad de Cundinamarca</strong>, apasionados por la intersección entre la tecnología y la salud. <strong>Eduard Garcia</strong>, como arquitecto principal del software, ha liderado el diseño de la infraestructura del sistema y la implementación de los algoritmos de visión artificial, enfocándose en optimizar la latencia del motor de procesamiento. Por su parte, <strong>Eddy Gomez</strong> ha desempeñado un rol estratégico en la gestión del proyecto, asegurando que el desarrollo cumpla con los estándares de calidad y los objetivos de investigación planteados para el PGC. Juntos, combinamos habilidades técnicas y visión analítica para transformar una idea académica en un prototipo funcional con impacto social.
-        </p>
-    </div>
+    <section id="nosotros" class="section-container-about">
+        <h2>Sobre el Equipo de Desarrollo</h2>
+        <div class="about-us-content">
+            <p>
+                Detrás de NeuroFit se encuentra un equipo de estudiantes de <strong>Ingeniería de Software de la UDEC</strong>. <strong>Eduard Garcia</strong> (Arquitecto de Software) y <strong>Eddy Gomez</strong> (Gestión Estratégica) combinan habilidades técnicas para transformar una idea en un impacto social.
+            </p>
         </div>
     </section>
 
@@ -85,11 +96,6 @@
                     <td><span class="risk-badge high">Alto</span></td>
                     <td>Normalización de datos mediante algoritmos de compensación.</td>
                 </tr>
-                <tr>
-                    <td>Fuga de Datos</td>
-                    <td><span class="risk-badge medium">Medio</span></td>
-                    <td>Anonimización de perfiles de usuario mediante IDs únicos.</td>
-                </tr>
             </tbody>
         </table>
     </section>
@@ -97,58 +103,54 @@
     <section id="software" class="section-container">
         <h2>Arquitectura del Sistema</h2>
         <div class="features-grid">
+            <!-- ELEMENTO BOOTSTRAP 2: Trigger de Modal en Tarjeta -->
+            <div class="feature-card highlight" data-bs-toggle="modal" data-bs-target="#modalDetalleTecnico" style="cursor: pointer;">
+                <div class="icon">🧠</div>
+                <h3>Renderizado Cinético</h3>
+                <p>Mapeo de 33 puntos corporales. <strong>(Clic para ver detalle)</strong></p>
+            </div>
+
+            <!-- Otras tarjetas normales -->
             <div class="feature-card">
-            <div class="icon">🔐</div>
-            <h3>Gestión de Identidad</h3>
-            <p>Validación en tiempo real y cifrado de datos para perfiles clínicos.</p>
-        </div>
-        <div class="feature-card">
-            <div class="icon">📷</div>
-            <h3>Calibración de Hardware</h3>
-            <p>Ajuste automático de iluminación y distancia mediante Visión Artificial.</p>
-        </div>
-        <div class="feature-card highlight">
-            <div class="icon">⚡</div>
-            <h3>Motor de Latencia Cero</h3>
-            <p>Algoritmos de compensación activa de input-lag para resultados exactos.</p>
-        </div>
-        <div class="feature-card">
-            <div class="icon">📊</div>
-            <h3>Panel Analítico</h3>
-            <p>Visualización de métricas de evolución y rapidez mental en tiempo real.</p>
-        </div>
-        <div class="feature-card">
-            <div class="icon">📄</div>
-            <h3>Reportes Clínicos PDF</h3>
-            <p>Exportación formal de diagnósticos basados en parámetros neurológicos.</p>
-        </div>
-        <div class="feature-card">
-            <div class="icon">🔄</div>
-            <h3>Historial Comparativo</h3>
-            <p>Análisis de progresión histórica entre sesiones de evaluación.</p>
-        </div>
-        <div class="feature-card">
-            <div class="icon">👥</div>
-            <h3>Acceso Multifactorial</h3>
-            <p>Permisos diferenciados según las <strong>características del usuario</strong> (Médico/Paciente).</p>
-        </div>
-        <div class="feature-card">
-            <div class="icon">🧠</div>
-            <h3>Renderizado Cinético</h3>
-            <p>Mapeo de 33 puntos corporales para un diagnóstico físico fiable.</p>
-        </div>
-        <div class="feature-card">
-            <div class="icon">💾</div>
-            <h3>Persistencia de datos</h3>
-            <p>Almacenamiento estructurado de perfiles clínicos y logs de rendimiento.</p>
-        </div>
-        <div class="feature-card">
-            <div class="icon">🚀</div>
-            <h3>Despliegue Flask</h3>
-            <p>Despliegue del backend en un entorno Flask para facilitar la gestión y mantenimiento.</p>
-        </div>
+                <div class="icon">⚡</div>
+                <h3>Motor Latencia Cero</h3>
+                <p>Algoritmos de compensación activa de input-lag.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">🔐</div>
+                <h3>Gestión de Identidad</h3>
+                <p>Validación en tiempo real y cifrado de datos clínicos.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">📊</div>
+                <h3>Panel Analítico</h3>
+                <p>Visualización de métricas de evolución en tiempo real.</p>
+            </div>
         </div>
     </section>
+
+    <!-- ESTRUCTURA DEL MODAL (BOOTSTRAP) -->
+    <div class="modal fade" id="modalDetalleTecnico" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content shadow-lg" style="border-radius: 20px; border: none;">
+                <div class="modal-header bg-dark text-white" style="border-radius: 20px 20px 0 0;">
+                    <h5 class="modal-title" id="modalLabel">Especificaciones de Visión Artificial</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4" style="color: #333;">
+                    <p>El núcleo de <strong>NeuroFit</strong> utiliza el modelo <em>BlazePose</em> de Google Mediapipe para:</p>
+                    <ul>
+                        <li>Seguimiento de 33 coordenadas clave en el espacio 3D.</li>
+                        <li>Frecuencia de muestreo adaptativa según el hardware.</li>
+                        <li>Cálculo de fatiga muscular basado en la velocidad de respuesta.</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <section id="desarrolladores" class="section-container">
         <h2>Equipo de Desarrollo</h2>
@@ -168,6 +170,9 @@
         <p>&copy; 2026 Proyecto PGC | NeuroFit</p>
         <p class="disclaimer">Prototipo funcional para el Proyecto Gestor de Conocimiento - UDEC.</p>
     </footer>
+
+    <!-- Bootstrap 5 Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
         // Animación de aparición (Scroll Reveal)
